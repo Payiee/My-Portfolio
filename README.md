@@ -1,16 +1,76 @@
-# React + Vite
+# Maria Fae Escobin — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+My personal developer portfolio, built to showcase my projects, skills, and background as a Computer Science student and mobile/web developer.
 
-Currently, two official plugins are available:
+**Live site:** _add your deployed URL here once hosted_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
 
-## React Compiler
+I'm a Computer Science student at De La Salle Lipa, focused on mobile and web development. This site highlights my work — including **Easy-Go-Local** and **Budgy** — and the tools I use across the stack.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sections
 
-## Expanding the Oxlint configuration
+- **Hero** — intro and tagline
+- **What I Do** — mobile app development & web development
+- **About Me** — background and focus areas
+- **Projects** — featured work with tech stack and links
+- **Skills** — technical and soft skills
+- **Education** — degree and school
+- **Connect** — email, WhatsApp, LinkedIn, GitHub
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tech Stack
+
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Oxlint](https://oxc.rs/) for linting
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the dev server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Lint the code:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── components/     # UI sections (Hero, AboutMe, Projects, Skills, etc.)
+├── data/
+│   └── content.js  # All portfolio content — edit this to update the site
+├── App.jsx
+└── main.jsx
+```
+
+All text content (profile info, projects, skills, education) lives in `src/data/content.js`, so the site can be updated without touching component code.
+
+## Contact
+
+- **Email:** faeescobin42@gmail.com
+- **LinkedIn:** [maria-fae-escobin](https://www.linkedin.com/in/maria-fae-escobin-92a0b6373/)
+- **GitHub:** [@Payiee](https://github.com/Payiee)
