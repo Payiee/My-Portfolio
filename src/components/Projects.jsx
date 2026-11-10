@@ -10,7 +10,6 @@ function Projects() {
       <div className="container">
         <div className="section-head">
           <h2 className="section-title">Projects</h2>
-          <p>Apps I've designed and built, from idea to working product.</p>
         </div>
         <div className="project-list">
           {projects.map((project) => {
@@ -23,7 +22,11 @@ function Projects() {
                   className={`project-visual project-visual-${project.mock}${shots.length ? ' has-shots' : ''}`}
                 >
                   {shots.length ? (
-                    <ScreenshotGallery name={project.name} images={shots} />
+                    <ScreenshotGallery
+                      name={project.name}
+                      images={shots}
+                      variant={project.screenshotStyle}
+                    />
                   ) : (
                     Mock && <Mock />
                   )}

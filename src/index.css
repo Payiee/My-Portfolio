@@ -205,10 +205,6 @@ img {
   margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
-.section-head p {
-  max-width: 46ch;
-}
-
 .lede {
   font-size: clamp(1.15rem, 1.6vw, 1.3rem);
   line-height: 1.65;
@@ -1014,6 +1010,54 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+/* Desktop variant: one browser window */
+
+.shots-desktop .shot {
+  flex: 0 1 100%;
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 0.8rem;
+  background: #2a2724;
+  box-shadow: 0 24px 48px -20px rgb(8 24 18 / 0.55);
+  transform: none;
+}
+
+.shots-desktop .shot:hover {
+  transform: translateY(-1%);
+}
+
+.browser-bar {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.55rem 0.75rem;
+  background: #2a2724;
+}
+
+.browser-bar i {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #4a4540;
+}
+
+.shots-desktop .shot img {
+  height: auto;
+  aspect-ratio: 1912 / 862;
+}
+
+.shots-desktop .shot-more {
+  inset: auto 0.75rem 0.75rem auto;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.92);
+  color: var(--pine-deep);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .shot-viewer {

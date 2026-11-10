@@ -1,6 +1,10 @@
 // All portfolio content lives here so it's easy to update without touching component code.
 // Items marked TODO are placeholders — replace with your real info/links.
 
+// Files in public/ are referenced with asset("folder/file.jpg"), which keeps
+// the paths working wherever the site is hosted.
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export const profile = {
   name: "Maria Fae Escobin",
   location: "Lipa City, Philippines",
@@ -27,7 +31,7 @@ export const projects = [
       "LipaAction is a thesis project: a mobile app where residents report incidents and a web console where barangay officials and city administrators review, route, and oversee those reports, with privacy and accountability built into every layer.",
     tech: ["React Native", "Expo Go"],
     mock: "report",
-    screenshots: [1, 2, 3, 4, 5, 6, 7].map((n) => `/projects/lipaaction/${n}.jpg`),
+    screenshots: [1, 2, 3, 4, 5, 6, 7].map((n) => asset(`projects/lipaaction/${n}.jpg`)),
     link: "#", // TODO: add live link or repo
   },
   {
@@ -38,12 +42,12 @@ export const projects = [
     tech: ["React Native", "Expo Go"],
     mock: "budget",
     // App screenshots: put the files in public/projects/budgy/ and list them here,
-    // e.g. "/projects/budgy/home.jpg". While this is empty, the drawn mock-up shows instead.
+    // e.g. asset("projects/budgy/home.jpg"). While this is empty, the drawn mock-up shows instead.
     screenshots: [
-      "/projects/budgy/1.jpg",
-      "/projects/budgy/2.jpg",
-      "/projects/budgy/3.jpg",
-      "/projects/budgy/4.jpg",
+      asset("projects/budgy/1.jpg"),
+      asset("projects/budgy/2.jpg"),
+      asset("projects/budgy/3.jpg"),
+      asset("projects/budgy/4.jpg"),
     ],
     link: "#", // TODO: add live link or repo
   },
@@ -54,8 +58,9 @@ export const projects = [
       "A calm, minimalist diary for iOS, Android and the web. Write entries with a mood, plan events with reminders, and look back on your week, month or year through mood stats and an AI reflection on that period. Entries stay on the device, and a daily AI companion offers a quote and advice based on your recent entries.",
     tech: ["React Native", "Expo", "Expo Router", "TypeScript", "Gemini API"],
     mock: "diary",
-    // Screenshots: put files in public/projects/daily-diary/ and list them here.
-    screenshots: [],
+    // Desktop (web) screenshots, shown in a browser frame.
+    screenshots: [1, 2, 3, 4].map((n) => asset(`projects/daily-diary/${n}.jpg`)),
+    screenshotStyle: "desktop",
     link: "#", // TODO: add live link or repo
   },
 ];
@@ -99,26 +104,26 @@ export const education = {
 };
 
 // Certificates: put the image files in public/certificates/ and set `certificate`
-// to "/certificates/<file name>" (e.g. "/certificates/calabarzon.jpg").
+// to asset("certificates/<file name>") (e.g. asset("certificates/calabarzon.jpg")).
 // Leave it as null to show an empty placeholder.
 export const seminars = [
   {
     title: "CaLaBarZon Young Innovators' Challenge",
     date: "April 14, 2026",
     location: "De La Salle Lipa, MB Building",
-    certificate: "/certificates/CLR.jpg",
+    certificate: asset("certificates/CLR.jpg"),
   },
   {
     title: "Innovative Research Horizons",
     date: "February 3, 2026",
     location: "De La Salle Lipa, CBEAM Function Hall",
-    certificate: "/certificates/IRH.jpg",
+    certificate: asset("certificates/IRH.jpg"),
   },
   {
     title:
       "Bridging Ethical Hacking and Data Analytics: Building Smarter and Safer Systems",
     date: "January 13, 2026",
     location: "De La Salle Lipa, Amphitheater",
-    certificate: "/certificates/Hacking.jpg",
+    certificate: asset("certificates/Hacking.jpg"),
   },
 ];

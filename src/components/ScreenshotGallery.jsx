@@ -4,11 +4,12 @@ import { useEffect, useRef, useState } from 'react'
 // If there are more, the last frame shows "+N more". Clicking any frame
 // opens a large viewer with previous/next controls for the full set.
 const MAX_VISIBLE = 4
-function ScreenshotGallery({ name, images }) {
+function ScreenshotGallery({ name, images, variant = 'phone' }) {
   const dialogRef = useRef(null)
   const [index, setIndex] = useState(null)
   const isOpen = index !== null
-  const visible = images.slice(0, MAX_VISIBLE)
+  // Desktop screenshots are wide, so only the first one fits in the panel.
+  const visible = images.slice(0, variant === 'desktop' ? 1 : MAX_VISIBLE)
   const hidden = images.length - visible.length
 
   useEffect(() => {
@@ -27,7 +28,7 @@ function ScreenshotGallery({ name, images }) {
 
   return (
     <>
-      <div className="shots">
+      <div className={`shots shots-${variant}`}>
         {visible.map((src, i) => {
           const isLast = i === visible.length - 1
           const showMore = isLast && hidden > 0
@@ -43,6 +44,11 @@ function ScreenshotGallery({ name, images }) {
                   : `View ${name} screenshot ${i + 1} of ${images.length}`
               }
             >
+              {variant === 'desktop' && (
+                <span className="browser-bar" aria-hidden="true">
+                  <i /> <i /> <i />
+                </span>
+              )}
               <img src={src} alt="" loading="lazy" />
               {showMore && (
                 <span className="shot-more" aria-hidden="true">
