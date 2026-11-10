@@ -1,23 +1,38 @@
+import { useState } from 'react'
 import { profile } from '../data/content'
 
 const links = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About Me' },
-  { href: '#projects', label: 'Projects' },
+  { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
-  { href: '#education', label: 'Educational' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#education', label: 'Education' },
+  { href: '#seminars', label: 'Seminars' },
 ]
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const close = () => setMenuOpen(false)
+
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <a href="#home" className="logo">
-          {profile.name.toUpperCase()}
+        <a href="#home" className="logo" onClick={close}>
+          {profile.name}
         </a>
-        <nav className="nav">
+        <button
+          type="button"
+          className={`nav-toggle${menuOpen ? ' is-open' : ''}`}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav className={`nav${menuOpen ? ' is-open' : ''}`}>
           {links.map((link) => (
-            <a key={link.href} href={link.href}>
+            <a key={link.href} href={link.href} onClick={close}>
               {link.label}
             </a>
           ))}

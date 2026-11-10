@@ -6,7 +6,7 @@ My personal developer portfolio, built to showcase my projects, skills, and back
 
 ## About
 
-I'm a Computer Science student at De La Salle Lipa, focused on mobile and web development. This site highlights my work — including **Easy-Go-Local** and **Budgy** — and the tools I use across the stack.
+I'm a Computer Science student at De La Salle Lipa, focused on mobile and web development. This site highlights my work — including **LipaAction** and **Budgy** — and the tools I use across the stack.
 
 ## Sections
 

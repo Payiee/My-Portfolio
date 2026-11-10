@@ -1,28 +1,51 @@
 import { projects } from '../data/content'
+import { ReportMock, BudgetMock } from './ProjectMocks'
+import ScreenshotGallery from './ScreenshotGallery'
+
+const mocks = { report: ReportMock, budget: BudgetMock }
 
 function Projects() {
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="section">
       <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.name}>
-              <div className="card-media" aria-hidden="true" />
-              <div className="project-card-body">
-                <div className="project-card-header">
-                  <h3>{project.name}</h3>
-                  <span className="project-period">{project.period}</span>
+        <div className="section-head">
+          <h2 className="section-title">Projects</h2>
+          <p>Apps I've designed and built, from idea to working product.</p>
+        </div>
+        <div className="project-list">
+          {projects.map((project) => {
+            const Mock = mocks[project.mock]
+            const hasLink = project.link && project.link !== '#'
+            const shots = project.screenshots ?? []
+            return (
+              <article className="project" key={project.name}>
+                <div
+                  className={`project-visual project-visual-${project.mock}${shots.length ? ' has-shots' : ''}`}
+                >
+                  {shots.length ? (
+                    <ScreenshotGallery name={project.name} images={shots} />
+                  ) : (
+                    Mock && <Mock />
+                  )}
                 </div>
-                <p>{project.description}</p>
-                <ul className="tech-tags">
-                  {project.tech.map((tech) => (
-                    <li key={tech}>{tech}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
+                <div className="project-body">
+                  <p className="project-period">{project.period}</p>
+                  <h3>{project.name}</h3>
+                  <p>{project.description}</p>
+                  <ul className="tech-tags" aria-label="Built with">
+                    {project.tech.map((tech) => (
+                      <li key={tech}>{tech}</li>
+                    ))}
+                  </ul>
+                  {hasLink && (
+                    <a className="text-link" href={project.link} target="_blank" rel="noreferrer">
+                      View {project.name}
+                    </a>
+                  )}
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

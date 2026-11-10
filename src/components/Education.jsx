@@ -1,30 +1,16 @@
-import { education, seminars } from '../data/content'
+import { education } from '../data/content'
 
 function Education() {
   return (
-    <section id="education" className="education">
-      <div className="container education-grid">
-        <div>
-          <h2 className="section-title">Education</h2>
-          <div className="education-card">
+    <section id="education" className="section section-tinted">
+      <div className="container section-split">
+        <h2 className="section-title">Education</h2>
+        <div className="degree">
+          <div>
             <h3>{education.degree}</h3>
-            <p className="education-school">{education.school}</p>
-            <p className="education-period">{education.period}</p>
+            <p>{education.school}</p>
           </div>
-        </div>
-
-        <div>
-          <h2 className="section-title">Seminars &amp; Conferences</h2>
-          <ul className="seminar-list">
-            {seminars.map((seminar) => (
-              <li className="seminar-item" key={seminar.title}>
-                <h3>{seminar.title}</h3>
-                <p>
-                  {seminar.date} · {seminar.location}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <span className="degree-period">{education.period}</span>
         </div>
       </div>
     </section>

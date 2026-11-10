@@ -2,10 +2,10 @@ import { aboutMe } from '../data/content'
 
 function AboutMe() {
   return (
-    <section id="about" className="about-me">
-      <div className="container about-me-inner">
-        <h2 className="section-title">About Me</h2>
-        <p>{aboutMe}</p>
+    <section id="about" className="section">
+      <div className="container section-split">
+        <h2 className="section-title">About me</h2>
+        <p className="lede">{aboutMe}</p>
       </div>
     </section>
   )
