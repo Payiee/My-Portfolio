@@ -85,3 +85,51 @@ export function BudgetMock() {
     </div>
   )
 }
+
+export function DiaryMock() {
+  // One week of the calendar; mood colours mirror a simple 5-mood scale.
+  const week = [
+    { d: 'M', n: 10, mood: 'calm' },
+    { d: 'T', n: 11, mood: 'happy' },
+    { d: 'W', n: 12, mood: 'low' },
+    { d: 'T', n: 13, mood: 'calm', today: true },
+    { d: 'F', n: 14, event: true },
+    { d: 'S', n: 15 },
+    { d: 'S', n: 16 },
+  ]
+
+  return (
+    <div className="mock mock-diary" aria-hidden="true">
+      <div className="phone phone-center diary-phone">
+        <div className="phone-notch" />
+        <p className="diary-greeting">Good morning, Fae</p>
+        <div className="diary-week">
+          {week.map((day) => (
+            <div className={`diary-day${day.today ? ' is-today' : ''}`} key={day.n}>
+              <small>{day.d}</small>
+              <span>{day.n}</span>
+              <i className={day.mood ? `dot dot-${day.mood}` : day.event ? 'dot dot-event' : 'dot'} />
+            </div>
+          ))}
+        </div>
+        <div className="diary-card">
+          <small>For you</small>
+          <p>“Small steps every day still move you forward.”</p>
+        </div>
+        <div className="diary-reminder">
+          <span className="diary-reminder-bar" />
+          <div>
+            <b>Study group</b>
+            <small>Tomorrow, 3:00 PM</small>
+          </div>
+        </div>
+        <div className="diary-entry">
+          <small>Today</small>
+          <b>A quiet morning walk</b>
+          <span>Felt calmer after getting some air before class…</span>
+        </div>
+        <div className="diary-fab">+</div>
+      </div>
+    </div>
+  )
+}

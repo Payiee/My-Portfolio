@@ -1,8 +1,8 @@
 import { projects } from '../data/content'
-import { ReportMock, BudgetMock } from './ProjectMocks'
+import { ReportMock, BudgetMock, DiaryMock } from './ProjectMocks'
 import ScreenshotGallery from './ScreenshotGallery'
 
-const mocks = { report: ReportMock, budget: BudgetMock }
+const mocks = { report: ReportMock, budget: BudgetMock, diary: DiaryMock }
 
 function Projects() {
   return (
@@ -29,7 +29,7 @@ function Projects() {
                   )}
                 </div>
                 <div className="project-body">
-                  <p className="project-period">{project.period}</p>
+                  {project.period && <p className="project-period">{project.period}</p>}
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                   <ul className="tech-tags" aria-label="Built with">

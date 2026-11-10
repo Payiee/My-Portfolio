@@ -17,7 +17,7 @@ export const profile = {
   github: "https://github.com/Payiee ", // TODO: replace with your real GitHub profile URL
 };
 
-export const aboutMe = `I'm a Computer Science student at De La Salle Lipa, focused on mobile and web development. I've built cross-platform apps using React Native and Expo Go — including LipaAction and Budgy — and I'm comfortable working across the stack with JavaScript, Node.js, and REST APIs. I'm organized, detail-oriented, and a fast learner who enjoys picking up new tools and turning ideas into working products.`;
+export const aboutMe = `I'm a Computer Science student at De La Salle Lipa, focused on mobile and web development. I've built cross-platform apps using React Native and Expo Go — including LipaAction, Budgy, and Daily Diary — and I'm comfortable working across the stack with JavaScript, Node.js, and REST APIs. I'm organized, detail-oriented, and a fast learner who enjoys picking up new tools and turning ideas into working products.`;
 
 export const projects = [
   {
@@ -45,6 +45,17 @@ export const projects = [
       "/projects/budgy/3.jpg",
       "/projects/budgy/4.jpg",
     ],
+    link: "#", // TODO: add live link or repo
+  },
+  {
+    name: "Daily Diary",
+    period: "2026",
+    description:
+      "A calm, minimalist diary for iOS, Android and the web. Write entries with a mood, plan events with reminders, and look back on your week, month or year through mood stats and an AI reflection on that period. Entries stay on the device, and a daily AI companion offers a quote and advice based on your recent entries.",
+    tech: ["React Native", "Expo", "Expo Router", "TypeScript", "Gemini API"],
+    mock: "diary",
+    // Screenshots: put files in public/projects/daily-diary/ and list them here.
+    screenshots: [],
     link: "#", // TODO: add live link or repo
   },
 ];

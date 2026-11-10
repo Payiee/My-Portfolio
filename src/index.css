@@ -804,6 +804,152 @@ img {
   background: var(--pine);
 }
 
+/* Daily Diary: one phone, home screen */
+
+.project-visual-diary {
+  background: #f1e6c6;
+}
+
+.mock-diary .diary-phone {
+  left: 50%;
+  top: 7%;
+  bottom: -5%;
+  width: 36%;
+  aspect-ratio: auto;
+  gap: 1em;
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.diary-greeting {
+  margin-top: 0.8em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3em;
+  line-height: 1.15;
+}
+
+.diary-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.2em;
+  text-align: center;
+}
+
+.diary-day {
+  display: grid;
+  justify-items: center;
+  gap: 0.2em;
+  padding: 0.35em 0;
+  border-radius: 0.6em;
+}
+
+.diary-day small {
+  font-size: 0.75em;
+  color: var(--ink-faint);
+}
+
+.diary-day span {
+  font-weight: 600;
+}
+
+.diary-day.is-today {
+  background: var(--pine);
+  color: #fff;
+}
+
+.diary-day.is-today small {
+  color: var(--mint);
+}
+
+.dot {
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+}
+
+.dot-calm { background: #7fb59a; }
+.dot-happy { background: var(--sun); }
+.dot-low { background: #8ea3c8; }
+.dot-event { background: transparent; box-shadow: inset 0 0 0 1.5px var(--pine); }
+.diary-day.is-today .dot-calm { background: var(--mint); }
+
+.diary-card {
+  padding: 0.9em;
+  border-radius: 0.8em;
+  background: var(--mint-soft);
+}
+
+.diary-card small {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--pine);
+}
+
+.diary-card p {
+  margin-top: 0.3em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05em;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.diary-reminder {
+  display: flex;
+  gap: 0.6em;
+  align-items: stretch;
+  padding: 0.7em 0.8em;
+  border-radius: 0.8em;
+  background: var(--paper);
+}
+
+.diary-reminder-bar {
+  width: 0.3em;
+  border-radius: 999px;
+  background: var(--sun);
+}
+
+.diary-reminder div {
+  display: grid;
+}
+
+.diary-reminder small {
+  font-size: 0.8em;
+  color: var(--ink-faint);
+}
+
+.diary-entry {
+  display: grid;
+  gap: 0.15em;
+  padding: 0.7em 0.8em;
+  border: 1px solid var(--line);
+  border-radius: 0.8em;
+}
+
+.diary-entry small {
+  font-size: 0.8em;
+  color: var(--ink-faint);
+}
+
+.diary-entry span {
+  font-size: 0.85em;
+  color: var(--ink-soft);
+}
+
+.diary-fab {
+  align-self: flex-end;
+  display: grid;
+  place-items: center;
+  width: 2.4em;
+  height: 2.4em;
+  margin-top: auto;
+  border-radius: 50%;
+  background: var(--pine);
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
 /* ---------- Project screenshots ---------- */
 
 .project-visual.has-shots {
@@ -1464,6 +1610,10 @@ img {
   }
 
   .mock-budget .phone-center {
+    width: 48%;
+  }
+
+  .mock-diary .diary-phone {
     width: 48%;
   }
 }
